@@ -10,6 +10,10 @@ public class DragHandeler : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
     Vector3 startPosition;
     Transform startParent;
 
+    //void Update()
+    //{
+    //    ;
+    //}
 
     public void OnBeginDrag(PointerEventData eventData)
     {
