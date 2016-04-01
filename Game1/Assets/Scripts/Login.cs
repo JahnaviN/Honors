@@ -16,6 +16,8 @@ public class Login : MonoBehaviour {
     private string Password;
     private string[] Lines;
 
+	public static string id;
+
 
 //    public void ChangeToScene(string sceneToChangeTo)
 //    {
@@ -93,6 +95,7 @@ public class Login : MonoBehaviour {
 			if(parts[0].Equals(Username))
 			{
 				ID = true;
+				id = Username;
 				if (parts [3].Equals (Password)) {
 					PW = true;
 					Debug.Log ("login successful");

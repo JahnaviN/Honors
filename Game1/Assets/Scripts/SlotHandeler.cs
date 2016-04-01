@@ -39,6 +39,8 @@ public class SlotHandeler : MonoBehaviour, IDropHandler {
 
     public Text score;
 
+	private string id = Login.id;
+
     void Start()
     {
         score.text = 0.ToString();
@@ -82,7 +84,7 @@ public class SlotHandeler : MonoBehaviour, IDropHandler {
 
 	private void saveScore()
 	{
-		var id = 1;
+//		var id = 1;
 		string filePath = Application.dataPath + "/CSV/" + "Scores.csv";
 		string[] arr = File.ReadAllLines (filePath);
 		for (int index = 0; index < arr.Length; index++) {
@@ -91,10 +93,19 @@ public class SlotHandeler : MonoBehaviour, IDropHandler {
 				string scene = SceneManager.GetActiveScene ().name;
 				parts[dict[scene]] = score.text;
 				string total = scene.Split(new char[] {'_'})[0] + "_total";
-				if (!parts [dict [total]].Equals ("-"))
-					parts [dict [total]] = (Int32.Parse (parts [dict [total]]) + Int32.Parse (score.text)).ToString ();
-				else
-					parts[dict[total]] = Int32.Parse (score.text).ToString ();
+
+//				if (!parts [dict [total]].Equals ("-"))
+//					parts [dict [total]] = (Int32.Parse (parts [dict [total]]) + Int32.Parse (score.text)).ToString ();
+//				else
+//					parts[dict[total]] = Int32.Parse (score.text).ToString ();
+
+				for (int i = 1; i <= 5; i++) {
+					string str = scene.Split (new char[] { '_' }) [0] + "_Q" + i.ToString ();
+					if(i == 1)
+						parts[dict[total]] = Int32.Parse (parts[dict[str]]).ToString ();
+					else if(!parts[dict[str]].Equals("-"))
+						parts [dict [total]] = (Int32.Parse (parts [dict [total]]) + Int32.Parse (parts[dict[str]]) ).ToString ();
+				}
 
 				var delimiter = ",";
 				var sb1 = new StringBuilder();
