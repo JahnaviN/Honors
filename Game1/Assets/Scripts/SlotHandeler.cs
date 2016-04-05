@@ -77,7 +77,6 @@ public class SlotHandeler : MonoBehaviour, IDropHandler {
 
 			if (Int32.Parse (score.text) == 100) {
 				saveScore ();
-				//SceneManager.LoadScene ("Game_Over");
 			}
         }
     }
@@ -111,7 +110,7 @@ public class SlotHandeler : MonoBehaviour, IDropHandler {
                 string[] split = scene.Split(new char[] { 'Q' });
                 int nxtq = Int32.Parse(split[1])+1;
                 string nxtScene = null;
-                if (nxtq <= 2)
+                if (nxtq <= 5)
                     nxtScene = split[0] + "Q" + nxtq.ToString();
                 else {
                     var s = split[0].Split(new char[] { 'L', '_' });
