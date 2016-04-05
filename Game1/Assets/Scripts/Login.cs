@@ -45,7 +45,7 @@ public class Login : MonoBehaviour {
 				if (parts [3].Equals (Password)) {
 					PW = true;
 					//Debug.Log ("login successful");
-					SceneManager.LoadScene (1);
+					SceneManager.LoadScene ("Level0");
 				} else {
 					Debug.Log ("password not equal");
 				}
