@@ -18,60 +18,6 @@ public class Login : MonoBehaviour {
 
 	public static string id;
 
-
-//    public void ChangeToScene(string sceneToChangeTo)
-//    {
-//        Application.LoadLevel(sceneToChangeTo);
-//    }
-
-//    public void LoginButton()
-//    {
-//        bool UN = false;
-//        bool PW = false;
-//
-//        string filePath = getPath();
-//
-//        if ( Username != "")
-//        {
-//            if ( System.IO.File.Exists(@"C:\Users\Nithiya Shree\Documents\Unity Games\UNITY_DATABASE\" + Username + ".txt"))
-//            {
-//                UN = true;
-//                Lines = System.IO.File.ReadAllLines(@"C:\Users\Nithiya Shree\Documents\Unity Games\UNITY_DATABASE\" + Username + ".txt");
-//            }
-//            else
-//            {
-//                Debug.LogWarning(" Username Invalid.");
-//            }
-//        }
-//        else
-//        {
-//            Debug.LogWarning(" Username field empty.");
-//        }
-//        
-//        if ( Password != "")
-//        {
-//            if ( Password == Lines[2])
-//            {
-//                PW = true;
-//            }
-//            else
-//            {
-//                Debug.LogWarning(" Invalid password.");
-//            }
-//        }
-//        else
-//        {
-//            Debug.LogWarning(" Password Field empty.");
-//        }
-//
-//        if ( UN == true && PW == true)
-//        {
-//            username.GetComponent<InputField>().text = "";
-//            password.GetComponent<InputField>().text = "";
-//            print(" Login Successful");
-//        }
-//    }
-
 	private void LoginButton()
 	{
 		bool ID = false;

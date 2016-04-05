@@ -12,7 +12,6 @@ public class FinalScore : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		Debug.Log (score.text);
 		string filePath = Application.dataPath + "/CSV/" + "Scores.csv";
 		string[] arr = File.ReadAllLines (filePath);
 		for (int index = 0; index < arr.Length; index++) {

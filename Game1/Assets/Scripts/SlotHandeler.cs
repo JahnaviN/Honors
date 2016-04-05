@@ -77,7 +77,7 @@ public class SlotHandeler : MonoBehaviour, IDropHandler {
 
 			if (Int32.Parse (score.text) == 100) {
 				saveScore ();
-				SceneManager.LoadScene ("Game_Over");
+				//SceneManager.LoadScene ("Game_Over");
 			}
         }
     }
@@ -94,11 +94,6 @@ public class SlotHandeler : MonoBehaviour, IDropHandler {
 				parts[dict[scene]] = score.text;
 				string total = scene.Split(new char[] {'_'})[0] + "_total";
 
-//				if (!parts [dict [total]].Equals ("-"))
-//					parts [dict [total]] = (Int32.Parse (parts [dict [total]]) + Int32.Parse (score.text)).ToString ();
-//				else
-//					parts[dict[total]] = Int32.Parse (score.text).ToString ();
-
 				for (int i = 1; i <= 5; i++) {
 					string str = scene.Split (new char[] { '_' }) [0] + "_Q" + i.ToString ();
 					if(i == 1)
@@ -112,7 +107,22 @@ public class SlotHandeler : MonoBehaviour, IDropHandler {
 				sb1.Append(string.Join(delimiter,parts));
 				arr [index] = sb1.ToString ();
 				File.WriteAllLines (filePath, arr);
-				break;
+
+                string[] split = scene.Split(new char[] { 'Q' });
+                int nxtq = Int32.Parse(split[1])+1;
+                string nxtScene = null;
+                if (nxtq <= 2)
+                    nxtScene = split[0] + "Q" + nxtq.ToString();
+                else {
+                    var s = split[0].Split(new char[] { 'L', '_' });
+                    nxtScene = "Level" + (Int32.Parse(s[1]) + 1).ToString();
+                }
+                //var s = split[0].Split(new char[] { 'L', '_' });
+                
+
+                SceneManager.LoadScene(nxtScene);
+
+                break;
 			}
 		}
 	}
