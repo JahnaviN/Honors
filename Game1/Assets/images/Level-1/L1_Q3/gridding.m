@@ -6,34 +6,34 @@ img = imread('img.jpg');  %# Load a sample 3-D RGB image
 % size of option = 150 x 150
 % a = img(100:220,200:320,:);
 
-w = 120;
+w = 170;
 
-x = 850;
-y = 150;
+x = 700;
+y = 400;
 a = img(x:x+w,y:y+w,:);
 imwrite(a,'p1.jpg');
 img(x:x+w,y:y+w,:) = 255;
 
-x = 340;
+x = 230;
 y = 450;
 a = img(x:x+w,y:y+w,:);
 imwrite(a,'p2.jpg');
 img(x:x+w,y:y+w,:) = 255;
 
-x = 40;
-y = 1500;
+x = 800;
+y = 1300;
 a = img(x:x+w,y:y+w,:);
 imwrite(a,'p3.jpg');
 img(x:x+w,y:y+w,:) = 255;
 
 x = 850;
-y = 900;
+y = 1050;
 a = img(x:x+w,y:y+w,:);
 imwrite(a,'p4.jpg');
 img(x:x+w,y:y+w,:) = 255;
 
-x = 400;
-y = 1550;
+x = 200;
+y = 1400;
 a = img(x:x+w,y:y+w,:);
 imwrite(a,'p5.jpg');
 img(x:x+w,y:y+w,:) = 255;
