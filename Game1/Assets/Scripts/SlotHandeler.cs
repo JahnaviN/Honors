@@ -89,7 +89,6 @@ public class SlotHandeler : MonoBehaviour, IDropHandler {
 
 	private void saveScore()
 	{
-//		var id = 1;
 		string filePath = Application.dataPath + "/CSV/" + "Scores.csv";
 		string[] arr = File.ReadAllLines (filePath);
 		for (int index = 0; index < arr.Length; index++) {
@@ -122,16 +121,7 @@ public class SlotHandeler : MonoBehaviour, IDropHandler {
                     var s = split[0].Split(new char[] { 'L', '_' });
                     nxtScene = "Level" + (Int32.Parse(s[1]) + 1).ToString();
                 }
-
-                /*var sc = SceneManager.GetSceneByName(nxtScene);
-                Debug.Log(sc.name);
-                if (sc.name.Equals("Null"))
-                    SceneManager.LoadScene(nxtScene);
-                else
-                    SceneManager.LoadScene("Game_Over");
-                    */
                 SceneManager.LoadScene(nxtScene);
-
                 break;
 			}
 		}
