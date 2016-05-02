@@ -164,6 +164,59 @@ public class Register : MonoBehaviour {
 		header[0][0] = id.ToString();
 		s.AppendLine(string.Join(delimiter,header[0]));
 		File.AppendAllText (fp, s.ToString ());
+
+        mistakes();
+    }
+
+    void mistakes()
+    {
+        string filePath = Application.dataPath + "/CSV/" + "mistakes.csv";
+        string delimiter = ",";
+        // string fp = Application.dataPath + "/CSV/" + "Scores.csv";
+        string[][] header;
+        header = new string[][] {
+            new string[] {
+                "ID",
+                "L0_Q1",
+                "L0_Q2",
+                "L0_Q3",
+                "L0_Q4",
+                "L0_Q5",
+                "L1_Q1",
+                "L1_Q2",
+                "L1_Q3",
+                "L1_Q4",
+                "L1_Q5",
+                "L2_Q1",
+                "L2_Q2",
+                "L2_Q3",
+                "L2_Q4",
+                "L2_Q5",
+                "L3_Q1",
+                "L3_Q2",
+                "L3_Q3",
+                "L3_Q4",
+                "L3_Q5",
+            },
+        };
+
+        if (!System.IO.File.Exists(filePath))
+        {
+            int length1 = header.GetLength(0);
+            StringBuilder sb1 = new StringBuilder();
+            for (int index = 0; index < length1; index++)
+                sb1.AppendLine(string.Join(delimiter, header[index]));
+
+            File.AppendAllText(filePath, sb1.ToString());
+        }
+
+        var id = File.ReadAllLines(filePath).Length;
+        StringBuilder s = new StringBuilder();
+        for (int index = 0; index < header[0].Length; index++)
+            header[0][index] = "-";
+        header[0][0] = id.ToString();
+        s.AppendLine(string.Join(delimiter, header[0]));
+        File.AppendAllText(filePath, s.ToString());
     }
 
     // To obtain the file path of the database file

@@ -62,6 +62,8 @@ public class Timer : MonoBehaviour
                 arr[index] = sb1.ToString();
                 File.WriteAllLines(filePath, arr);
 
+                getMistakes();
+
                 string[] split = scene.Split(new char[] { 'Q' });
                 int nxtq = Int32.Parse(split[1]) + 1;
                 string nxtScene = null;
@@ -72,6 +74,60 @@ public class Timer : MonoBehaviour
                     nxtScene = "Level" + (Int32.Parse(s[1]) + 1).ToString();
                 }
                 SceneManager.LoadScene(nxtScene);
+
+                break;
+            }
+        }
+    }
+
+    private void getMistakes()
+    {
+        string op = "";
+        for(int i=1; i<=5; i++)
+        {
+            string p1 = "slot";
+            var item = GameObject.FindGameObjectWithTag(p1+i.ToString());
+            if (item.transform.childCount != 0)
+            {
+                var child = item.transform.GetChild(0);
+                if (child.tag != i.ToString())
+                {
+                    op += child.tag.ToString() + ";";
+                }
+                else
+                    op += "c;";
+            }
+            else
+                op = op + "n;";
+        }
+
+        if (op == null)
+            return;
+
+        string filePath = Application.dataPath + "/CSV/" + "mistakes.csv";
+        string[] arr = File.ReadAllLines(filePath);
+
+        Dictionary<string, int> mDict = new Dictionary<string, int>();
+        string[] parts = arr[0].Split(new char[] { ',' });
+        for (int index = 0; index < parts.Length; index++)
+        {
+            if (!mDict.ContainsKey(parts[index]))
+                mDict[parts[index]] = index;
+        }
+
+        for (int index = 1; index < arr.Length; index++)
+        {
+            parts = arr[index].Split(new char[] { ',' });
+            if (parts[0].Equals(id.ToString()))
+            {
+                string scene = SceneManager.GetActiveScene().name;
+                parts[mDict[scene]] = op;
+
+                var delimiter = ",";
+                var sb1 = new StringBuilder();
+                sb1.Append(string.Join(delimiter, parts));
+                arr[index] = sb1.ToString();
+                File.WriteAllLines(filePath, arr);
                 break;
             }
         }
