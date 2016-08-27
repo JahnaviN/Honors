@@ -29,7 +29,7 @@ public class Login : MonoBehaviour {
 			Debug.Log ("User not registered");
 			return;
 		}
-
+			
 		var reader =  File.OpenText(filePath);
 
 		string line;

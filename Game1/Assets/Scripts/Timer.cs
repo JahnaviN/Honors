@@ -22,7 +22,7 @@ public class Timer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (time <= 0)
+        if (time <= 28)
         {
 			saveScore ();
         }
@@ -73,7 +73,10 @@ public class Timer : MonoBehaviour
                     var s = split[0].Split(new char[] { 'L', '_' });
                     nxtScene = "Level" + (Int32.Parse(s[1]) + 1).ToString();
                 }
-                SceneManager.LoadScene(nxtScene);
+				if (nxtScene == "Level5")
+					SceneManager.LoadScene ("Login");
+				else
+                	SceneManager.LoadScene(nxtScene);
 
                 break;
             }

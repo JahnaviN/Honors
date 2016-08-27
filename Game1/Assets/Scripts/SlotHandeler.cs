@@ -41,6 +41,12 @@ public class SlotHandeler : MonoBehaviour, IDropHandler {
 		{"L3_Q4",24},
 		{"L3_Q5",25},
 		{"L3_total",26},
+		{"L4_Q1",27},
+		{"L4_Q2",28},
+		{"L4_Q3",29},
+		{"L4_Q4",30},
+		{"L4_Q5",31},
+		{"L4_total",32}
 	};
 
     public Text score;
