@@ -129,7 +129,13 @@ public class Register : MonoBehaviour {
 				"L4_Q3",
 				"L4_Q4",
 				"L4_Q5",
-				"L4_total"
+				"L4_total",
+				"L5_Q1",
+				"L5_Q2",
+				"L5_Q3",
+				"L5_Q4",
+				"L5_Q5",
+				"L5_total",
 			},
 		};
 
@@ -208,6 +214,11 @@ public class Register : MonoBehaviour {
 				"L4_Q3",
 				"L4_Q4",
 				"L4_Q5",
+				"L5_Q1",
+				"L5_Q2",
+				"L5_Q3",
+				"L5_Q4",
+				"L5_Q5",
             },
         };
 
