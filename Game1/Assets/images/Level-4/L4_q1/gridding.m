@@ -6,10 +6,10 @@ img = imread('img.jpg');  %# Load a sample 3-D RGB image
 % size of option = 150 x 150
 % a = img(100:220,200:320,:);
 
-w = 100;
+w = 120;
 
 x = 200;
-y = 100;
+y = 80;
 a = img(x:x+w,y:y+w,:);
 imwrite(a,'p1.jpg');
 img(x:x+w,y:y+w,:) = 255;
