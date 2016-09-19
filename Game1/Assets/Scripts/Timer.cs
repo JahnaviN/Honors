@@ -22,7 +22,7 @@ public class Timer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (time <= 29)
+        if (time <= 0)
         {
 			saveScore ();
         }

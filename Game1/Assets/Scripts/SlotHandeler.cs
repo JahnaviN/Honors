@@ -133,7 +133,10 @@ public class SlotHandeler : MonoBehaviour, IDropHandler {
                     var s = split[0].Split(new char[] { 'L', '_' });
                     nxtScene = "Level" + (Int32.Parse(s[1]) + 1).ToString();
                 }
-                SceneManager.LoadScene(nxtScene);
+				if (nxtScene == "Level6")
+					SceneManager.LoadScene ("Login");
+				else
+					SceneManager.LoadScene(nxtScene);
                 break;
 			}
 		}
