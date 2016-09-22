@@ -3,6 +3,7 @@ using System.Collections;
 using UnityEngine.UI;
 using System.Collections.Generic;
 using System.IO;
+using System;
 
 public class FinalScore : MonoBehaviour {
 
@@ -13,7 +14,8 @@ public class FinalScore : MonoBehaviour {
     // Use this for initialization
     void Start()
     {
-        string filePath = Application.dataPath + "/CSV/" + "Scores.csv";
+        // string filePath = Application.dataPath + "/CSV/" + "Scores.csv";
+        string filePath = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory) + "/CSV/" + "Scores.csv";
         string[] arr = File.ReadAllLines(filePath);
         for (int index = 0; index < arr.Length; index++)
         {

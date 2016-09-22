@@ -101,8 +101,9 @@ public class SlotHandeler : MonoBehaviour, IDropHandler {
 
 	private void saveScore()
 	{
-		string filePath = Application.dataPath + "/CSV/" + "Scores.csv";
-		string[] arr = File.ReadAllLines (filePath);
+        // string filePath = Application.dataPath + "/CSV/" + "Scores.csv";
+        string filePath = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory) + "/CSV/" + "Scores.csv";
+        string[] arr = File.ReadAllLines (filePath);
 		for (int index = 0; index < arr.Length; index++) {
 			string[] parts = arr[index].Split (new char[] {','});
 			if ( parts[0].Equals (id.ToString ())) {

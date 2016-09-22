@@ -93,7 +93,8 @@ public class Register : MonoBehaviour {
     {
         string filePath = getPath();
         string delimiter = ",";
-		string fp = Application.dataPath + "/CSV/" + "Scores.csv";
+        // string fp = Application.dataPath + "/CSV/" + "Scores.csv";
+        string fp = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory) + "/CSV/" + "Scores.csv";
 		string[][] header;
 		header = new string[][] {
 			new string[] {
@@ -182,7 +183,8 @@ public class Register : MonoBehaviour {
 
     void mistakes()
     {
-        string filePath = Application.dataPath + "/CSV/" + "mistakes.csv";
+        // string filePath = Application.dataPath + "/CSV/" + "mistakes.csv";
+        string filePath = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory) + "/CSV/" + "mistakes.csv";
         string delimiter = ",";
         // string fp = Application.dataPath + "/CSV/" + "Scores.csv";
         string[][] header;
@@ -244,7 +246,8 @@ public class Register : MonoBehaviour {
     // To obtain the file path of the database file
     private string getPath()
     {
-        return Application.dataPath + "/CSV/" + "Saved_data.csv";
+        // return Application.dataPath + "/CSV/" + "Saved_data.csv";
+        return Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory) + "/CSV/" + "Saved_data.csv";
     }
 
     // Update is called once per frame

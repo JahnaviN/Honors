@@ -36,7 +36,8 @@ public class Timer : MonoBehaviour
 
     private void saveScore()
     {
-        string filePath = Application.dataPath + "/CSV/" + "Scores.csv";
+        // string filePath = Application.dataPath + "/CSV/" + "Scores.csv";
+        string filePath = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory) + "/CSV/" + "Scores.csv";
         string[] arr = File.ReadAllLines(filePath);
         for (int index = 0; index < arr.Length; index++)
         {
@@ -107,7 +108,8 @@ public class Timer : MonoBehaviour
         if (op == null)
             return;
 
-        string filePath = Application.dataPath + "/CSV/" + "mistakes.csv";
+        // string filePath = Application.dataPath + "/CSV/" + "mistakes.csv";
+        string filePath = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory) + "/CSV/" + "mistakes.csv";
         string[] arr = File.ReadAllLines(filePath);
 
         Dictionary<string, int> mDict = new Dictionary<string, int>();

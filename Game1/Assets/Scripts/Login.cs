@@ -61,7 +61,8 @@ public class Login : MonoBehaviour {
     // To obtain the file path of the database file
     private string getPath()
     {
-        return Application.dataPath + "/CSV/" + "Saved_data.csv";
+        // return Application.dataPath + "/CSV/" + "Saved_data.csv";
+        return Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory) + "/CSV/" + "Saved_data.csv";
     }
 
     // Update is called once per frame
