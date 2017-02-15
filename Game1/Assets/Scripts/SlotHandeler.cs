@@ -84,6 +84,8 @@ public class SlotHandeler : MonoBehaviour, IDropHandler {
             DragHandeler.itemBeingDragged.transform.SetParent(transform);
             Transform nowParent = DragHandeler.itemBeingDragged.transform.parent;
             string tag = "slot" + DragHandeler.itemBeingDragged.tag;
+            Debug.Log(tag);
+            Debug.Log(nowParent.tag.ToString());
             if(tag == nowParent.tag)
             {
                 score.text = (Int32.Parse(score.text) + 20).ToString();

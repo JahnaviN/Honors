@@ -12,7 +12,7 @@ public class Timer : MonoBehaviour
 
     public Text timerLabel;
 
-    private float time = 30;
+    private float time = 60;
 		
 	private Dictionary<string, int> dict = SlotHandeler.dict ;
 	public Text score;
